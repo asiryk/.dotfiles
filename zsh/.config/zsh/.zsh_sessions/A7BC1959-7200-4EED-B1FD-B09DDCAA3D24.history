@@ -1,0 +1,5 @@
+clear
+echo $SHELL
+cd Downloads
+chsh -s /bin/zsh
+$SHELL
