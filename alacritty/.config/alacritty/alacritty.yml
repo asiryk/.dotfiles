@@ -7,17 +7,17 @@ window:
 
 font:
   normal:
-    family: "JetBrainsMonoMedium Nerd Font Mono"
-    style: Medium
+    family: "Hack Nerd Font Mono"
+    style: Regular
 
   italic:
-    family: "JetBrainsMonoMedium Nerd Font Mono"
-    style: "Medium Italic"
+    family: "Hack Nerd Font Mono"
+    style: Italic
 
   bold:
-    family: "Fira Code"
+    family: "Hack Nerd Font Mono"
     style: Bold
 
-  size: 13.0
+  size: 14.0
 
-background_opacity: 0.95
+background_opacity: 1.00
