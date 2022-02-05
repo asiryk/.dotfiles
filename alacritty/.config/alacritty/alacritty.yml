@@ -1,23 +1,14 @@
 window:
-  dimensions:
-    columns: 85
-    lines: 30
-
-  dynamic_title: true
+  opacity: 0.95 # Don't use value 1.0 because of the mission control lag on macOS https://github.com/alacritty/alacritty/issues/4410
 
 font:
   normal:
-    family: "Hack Nerd Font Mono"
-    style: Regular
-
-  italic:
-    family: "Hack Nerd Font Mono"
-    style: Italic
-
-  bold:
-    family: "Hack Nerd Font Mono"
-    style: Bold
+    family: 'Hack Nerd Font Mono'
 
   size: 14.0
 
-background_opacity: 1.00
+# Color scheme
+import: 
+  - ~/.config/alacritty/riot.yml
+
+draw_bold_text_with_bright_colors: true
