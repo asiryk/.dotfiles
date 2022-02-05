@@ -1,4 +1,3 @@
-# Confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+alias rmd="rm -rf"
+alias cls="clear"
+alias gs="git status"
