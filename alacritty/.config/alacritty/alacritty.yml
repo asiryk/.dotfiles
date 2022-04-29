@@ -10,6 +10,13 @@ font:
 
   size: 14.0
 
+cursor:
+  style:
+    shape: Beam
+
+  vi_mode_style:
+    shape: Block
+
 # Color scheme
 import: 
   - ~/.config/alacritty/riot.yml
