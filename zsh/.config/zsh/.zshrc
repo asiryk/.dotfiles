@@ -15,3 +15,6 @@ zle_highlight=('paste:none') # Don't highlight text on paste
 # Load and init autocompletions
 autoload compinit
 compinit
+
+# fnm node version manager
+eval "$(fnm env --use-on-cd)"
