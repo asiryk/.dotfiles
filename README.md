@@ -22,3 +22,6 @@ The configuration for some of these programs are present in this repo
 * [Neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
 * [ripgrep](https://github.com/BurntSushi/ripgrep) - ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 * [stow](https://www.gnu.org/software/stow) - A symlink farm manager
+* [btop](https://github.com/aristocratos/btop) -  A monitor of resources
+* [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder
+* [neofetch](https://github.com/dylanaraps/neofetch) - A command-line system information tool written in bash 3.2+
