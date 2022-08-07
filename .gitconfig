@@ -1,0 +1,19 @@
+[user]
+  email = asiryk.net@gmail.com
+  name = asiryk
+[init]
+  defaultBranch = main
+[pull]
+  rebase = false
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  lo = log --oneline
+  last = log -1 head
+  st = !git status --porcelain | sed s/^...//
+
+[include]
+  path = ~/.dotfiles/git-delta.ini
