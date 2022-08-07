@@ -1,6 +1,5 @@
-# PROMPT='%(?.%F{green}Ã.%F{red}?%?)%f %B%F{240}%1~%f%b %# ' 
+PROMPT=$'%F{cyan}%~%f\n\ue224\uf061 '
 
-# PROMPT='%F{111}%m:%F{2}%~ %(!.#.$)%f '
-# PROMPT=$'%m Ð %*\n%n:%~:%# '
-PROMPT=$'%F{cyan}%~%f\n\Ue224\Uf061 '
-# PROMPT=$'%F{cyan}%~%f\n\-> '
+# \u276f - cute lil' arrow without plank
+# \u279c - small 1 char arrow
+# \ue224\uf061 - 2 char cool arrow
