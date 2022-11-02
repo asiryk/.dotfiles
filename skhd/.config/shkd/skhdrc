@@ -1,3 +1,7 @@
+# https://github.com/koekeishiya/skhd/issues/1#issue-177177268
+# keycodes
+
+
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
 # FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
@@ -76,6 +80,12 @@
 # A REFERENCE ONLY, WHEN MAKING YOUR OWN CONFIGURATION..          #
 # ############################################################### #
 
+# shift + alt - j : yabai -m window --focus stack.prev
+# shift + alt - k : yabai -m window --focus stack.next
+# shift + alt - j : yabai -m window --focus prev
+# shift + alt - k : yabai -m window --focus next
+cmd - return : open -na /Applications/Alacritty.app
+
 # focus window
 # alt - h : yabai -m window --focus west
 
@@ -89,7 +99,7 @@
 # shift + alt - 0 : yabai -m space --balance
 
 # make floating window fill screen
-# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
 # shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1

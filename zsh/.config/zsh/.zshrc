@@ -23,7 +23,8 @@ eval "$(fnm env --use-on-cd)"
 
 # Completions
 autoload -Uz compinit
-zstyle ':completion:*' menu select
+# zstyle ':completion:*' menu select
+zstyle ':completion:*' menu yes select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
 _comp_options+=(globdots) # Include hidden files.
