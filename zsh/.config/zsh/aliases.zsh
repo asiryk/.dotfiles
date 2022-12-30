@@ -1,9 +1,12 @@
 # alias rmd="rm -rf" # the worst alias ever
 alias gs="git status -s"
-alias ls='ls -G' # Add colorized output to ls
-alias ll='ls -lAh'
-alias tree='exa --tree'
+alias ls="ls --color" # Add colorized output to ls
+alias ll="ls -lAh"
+alias clear="clear -x" # Allow scroll after clear
+alias tree="exa --tree"
 alias vim="nvim --noplugin"
+alias vi="nvim --clean"
+alias v="\\vi"
 
 alias neovide="~/Personal/neovide/target/release/neovide"
 

@@ -19,8 +19,6 @@ eval "$(fnm env --use-on-cd)"
 # enable fzf bindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-
 # Completions
 autoload -Uz compinit
 # zstyle ':completion:*' menu select
