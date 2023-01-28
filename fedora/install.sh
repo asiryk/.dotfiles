@@ -2,9 +2,25 @@
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
 
+# remove screen tearing
+touch /etc/X11/xorg.conf.d/20-intel.conf
+echo '
+Section "Device"
+ 
+    Identifier "Intel Graphics"
+ 
+    Driver "intel"
+ 
+    Option "TearFree" "true"
+ 
+EndSection
+' >> /etc/X11/xorg.conf.d/20-intel.conf
+
 # speed up dnf
-echo "fastermirror=True" >> /etc/dnf/dnf.conf
-echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
+echo "
+fastermirror=True
+max_parallel_downloads=10
+" >> /etc/dnf/dnf.conf
 
 # update installed
 sudo dnf update

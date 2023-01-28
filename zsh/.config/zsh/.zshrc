@@ -5,6 +5,7 @@ zsh_add_file "aliases.zsh"
 zsh_add_file "prompt.zsh"
 zsh_add_file "vim-mode.zsh"
 zsh_add_file "work.zsh"
+zsh_add_file "fedora/aliases.zsh"
 
 # # Add plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

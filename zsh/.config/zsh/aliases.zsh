@@ -6,9 +6,4 @@ alias clear="clear -x" # Allow scroll after clear
 alias tree="exa --tree"
 alias vim="nvim --noplugin"
 alias vi="nvim --clean"
-alias v="\\vi"
-
-alias neovide="~/Personal/neovide/target/release/neovide"
-
-alias wmon="brew services start yabai; brew services start skhd"
-alias wmoff="brew services stop yabai; brew services stop skhd"
+alias v="vi"
