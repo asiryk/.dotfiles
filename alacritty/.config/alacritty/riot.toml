@@ -1,0 +1,13 @@
+# Colors (Riot) - a custom color scheme
+[colors.normal]
+black         = "0x141414" # eerie black
+blue          = "0x4281a4" # celadon blue
+cyan          = "0x62bec1" # maximum blue green
+green         = "0x4d8b31" # maximum green
+magenta       = "0xaa6292" # pearly purple
+red           = "0xca4754" # brick red
+white         = "0xecf0f1" # cultured
+yellow        = "0xe3ae2d" # goldenrod
+
+[colors.primary]
+background    = "0x191919" # eerie black
