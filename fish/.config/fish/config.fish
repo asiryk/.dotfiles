@@ -16,6 +16,7 @@ function fish_user_key_bindings
     set -x GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
     # Path
+    fish_add_path ~/bin
     fish_add_path /opt/homebrew/bin
     fish_add_path /Users/asiryk/Library/Python/3.9/bin
     fish_add_path /Applications/IntelliJ IDEA.app/Contents/MacOS
