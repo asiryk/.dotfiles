@@ -25,3 +25,12 @@ The configuration for some of these programs are present in this repo
 * [btop](https://github.com/aristocratos/btop) -  A monitor of resources
 * [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder
 * [neofetch](https://github.com/dylanaraps/neofetch) - A command-line system information tool written in bash 3.2+
+* [lf](https://github.com/gokcehan/lf) - Terminal file manager
+* [tldr](https://github.com/tldr-pages/tldr) - Collaborative cheatsheets for console commands
+* [zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter cd command. Supports all major shells.
+* [git filter repo](https://github.com/newren/git-filter-repo) - Quickly rewrite git repository history (filter-branch replacement)
+* [dust](https://github.com/bootandy/dust) - A more intuitive version of du in rust
+* [fish-shell](https://github.com/fish-shell/fish-shell) - The user-friendly command line shell.
+* [cmatrix](https://github.com/abishekvashok/cmatrix) - Terminal based "The Matrix" like implementation
+* [hey](https://github.com/rakyll/hey) - HTTP load generator, ApacheBench (ab) replacement
+* [jq](https://github.com/jqlang/jq) - Command-line JSON processor
