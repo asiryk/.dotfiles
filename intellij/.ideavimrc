@@ -12,14 +12,9 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-set number
-set relativenumber
-
 " Highlighted yank
-Plug 'machakann/vim-highlightedyank'
+set highlightedyank
 let g:highlightedyank_highlight_duration = "75"
-" let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
-
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
@@ -37,7 +32,9 @@ set ideajoin
 set commentary
 
 # Custom defaults
-set hlsearch
+set nohlsearch
+set relativenumber
+set number
 
 
 " Custom remaps
@@ -66,8 +63,11 @@ let mapleader = " "
 nmap <leader>lr <action>(RenameElement)
 nmap <leader>lf <action>(ReformatCode)<action>(OptimizeImports)
 nmap <leader>ff <action>(FindInPath)
-nmap <leader>fo <action>(GotoClass)
+nmap <leader>fo <action>(GotoFile)
+nmap <leader>fc <action>(GotoClass)
 nmap <leader>fr <action>(FindUsages)
+nmap <leader>fj <action>(RecentFiles)
+nmap <leader>fk <action>(RecentChangedFiles)
 nmap <leader>gk <action>(VcsShowPrevChangeMarker)zz
 nmap <leader>gj <action>(VcsShowNextChangeMarker)zz
 nmap <leader>gr <action>(Vcs.RollbackChangedLines)
