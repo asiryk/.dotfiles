@@ -7,15 +7,19 @@ function fish_user_key_bindings
 end
 
 function fish_prompt --description 'minimum info snappy prompt'
+    # Allow the directory names to be longer.
+    set -q fish_prompt_pwd_dir_length
+    or set -lx fish_prompt_pwd_dir_length 0
+
     if functions -q fish_is_root_user; and fish_is_root_user
         printf '%s%s%s %s%s%s\n%s\ue224\uf061%s ' \
             (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
-            (set_color $fish_color_cwd) $PWD (set_color normal) \
+            (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
             (set_color bryellow) (set_color normal)
     else
         printf '%s%s%s %s%s%s\n\ue224\uf061 ' \
             (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
-            (set_color $fish_color_cwd) $PWD (set_color normal)
+            (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
     end
 end
 
