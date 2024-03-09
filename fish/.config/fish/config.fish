@@ -30,6 +30,7 @@ function fish_user_key_bindings
 
     # Programs
     zoxide init fish | source
+    fnm env --use-on-cd | source
 
     # Aliases
     alias gs='git status'
