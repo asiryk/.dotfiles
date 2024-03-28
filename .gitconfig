@@ -11,9 +11,17 @@
   process = git-lfs filter-process
   required = true
 [alias]
-  lo = log --oneline
+  lo = log --oneline -n 20
   last = log -1 head
+  db = !git branch | fzf --multi | xargs git branch -D
   st = !git status --porcelain | sed s/^...//
+  sb = !git branch | fzf | xargs git switch
+  sp = !git status --porcelain | sed s/^...// | fzf --multi | xargs git stash push
+  sl = !git stash list --color=always --pretty='%C(yellow)%gd %h %Cgreen%cr %C(reset)%gs'
 
 [include]
   path = ~/.dotfiles/git-delta.ini
+[core]
+	autocrlf = input
+[credential]
+	helper = osxkeychain

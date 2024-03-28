@@ -73,3 +73,5 @@ nmap <leader>gj <action>(VcsShowNextChangeMarker)zz
 nmap <leader>gr <action>(Vcs.RollbackChangedLines)
 nmap <leader>ga <action>(Vcs.QuickListPopupAction)
 nmap <leader>r <action>(EditorPopupMenu.Run)
+nmap zf <action>(CollapseRegion)
+nmap zo <action>(ExpandRegion)

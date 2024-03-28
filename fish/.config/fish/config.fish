@@ -29,11 +29,19 @@ zoxide init fish | source
 fnm env --use-on-cd | source
 
 # Aliases
-alias gs='git status'
-alias ll='ls -al'
+alias gs="git status"
+alias ll="ls -al"
 alias vim="nvim --noplugin"
 alias vi="nvim --clean"
 alias v="vi"
+
+alias gitbs="git branch | fzf | xargs git switch"
+alias gitbd="git branch | fzf | xargs git branch -d"
+
+function fzfd --description 'fzf to common directories'
+    set -l dir (find ~/Work ~/.dotfiles ~/.config/ -mindepth 1 -maxdepth 3 -type d | fzf)
+    cd $dir
+end
 
 function fish_user_key_bindings
     # Enable vim mode
