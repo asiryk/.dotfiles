@@ -39,7 +39,7 @@ alias gitbs="git branch | fzf | xargs git switch"
 alias gitbd="git branch | fzf | xargs git branch -d"
 
 function fzfd --description 'fzf to common directories'
-    set -l dir (find ~/Work ~/.dotfiles ~/.config/ -mindepth 1 -maxdepth 3 -type d | fzf)
+    set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 1 -maxdepth 3 -type d | fzf)
     cd $dir
 end
 
