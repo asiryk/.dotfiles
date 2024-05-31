@@ -22,6 +22,11 @@
 [include]
   path = ~/.dotfiles/git-delta.ini
 [core]
-	autocrlf = input
+  autocrlf = input
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+[rerere]
+  enabled = true
+
+[includeIf "gitdir:~/Work/"]
+  path = ~/.gitconfig-work

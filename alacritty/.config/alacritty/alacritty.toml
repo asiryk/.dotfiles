@@ -23,10 +23,13 @@ size = 14.0
 [font.normal]
 family = "Hack Nerd Font Mono"
 
-[[keyboard.bindings]]
-action = "CreateNewWindow"
-key = "N"
-mods = "Command"
+[keyboard]
+bindings = [
+  { action = "CreateNewWindow", mods = "Command", key = "N" },
+  { action = "ToggleViMode", mods = "Control", key = "Enter" },
+  { action = "ClearSelection", mode = "Vi", key = "Escape" },
+  { action = "ToggleViMode", mode = "Vi", key = "I" },
+]
 
 [window]
 opacity = 0.9 # Don't use value 1.0 because of the mission control lag on macOS https://github.com/alacritty/alacritty/issues/4410

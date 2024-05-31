@@ -31,14 +31,17 @@ let g:highlightedyank_highlight_duration = "75"
 set ideajoin
 set commentary
 
-# Custom defaults
+" Custom defaults
 set nohlsearch
 set relativenumber
 set number
+set ignorecase
+set smartcase
 
 
 " Custom remaps
 
+" nnoremap <Esc> :noh<CR>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-f> <C-f>zz
