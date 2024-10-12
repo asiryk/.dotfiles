@@ -39,39 +39,17 @@ alias gitbs="git branch | fzf | xargs git switch"
 alias gitbd="git branch | fzf | xargs git branch -d"
 
 function fzfd --description "fzf to common directories"
-  set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 1 -maxdepth 3 -type d | fzf)
+  set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
   cd $dir
-end
-
-function pm --description "process manager"
-  set -l cmd (string trim -- $argv[1])
-  set -l idx (string trim -- $argv[2])
-
-  set -l silence '> /dev/null 2>&1 &'
-  switch $cmd
-    case "start"
-      eval "$idx $silence"
-      echo "Job started: $idx"
-    case "stop"
-      kill %$idx
-      echo "Job stopped: %$idx"
-    case "restart"
-      set -l pattern ''"$idx"
-      set -l command (jobs | sort | awk '$1 == '"$idx"' { cmd = ""; for (i = 4; i <= NF; i++) { if ($i == ">") break; cmd = cmd " " $i; } print cmd }')
-      set -l command (string trim command)
-      kill %$idx
-      eval "$command $silence"
-      echo "Job restarted: \"$command\""
-      jobs
-    case '*'
-      echo "Usage: jm start \"command\" | stop job_index | restart job_index"
-  end
 end
 
 function fish_user_key_bindings
   # Enable vim mode
   fish_default_key_bindings -M insert
   fish_vi_key_bindings --no-erase insert
+
+  bind -M insert \cr "fzf_search_history"
+  bind -M insert \cf "fzfd"
 end
 
 function fish_prompt --description "minimum info snappy prompt"
@@ -80,12 +58,12 @@ function fish_prompt --description "minimum info snappy prompt"
   or set -lx fish_prompt_pwd_dir_length 0
 
   if functions -q fish_is_root_user; and fish_is_root_user
-    printf "%s%s%s %s%s%s\n%s\ue224\uf061%s " \
+    printf "%s%s%s %s%s%s\n%s❯_%s " \
       (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
       (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
       (set_color bryellow) (set_color normal)
   else
-    printf "%s%s%s %s%s%s\n\ue224\uf061 " \
+    printf "%s%s%s %s%s%s\n❯_ " \
       (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
       (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
   end
