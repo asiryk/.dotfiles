@@ -33,3 +33,4 @@ bindings = [
 
 [window]
 opacity = 0.9 # Don't use value 1.0 because of the mission control lag on macOS https://github.com/alacritty/alacritty/issues/4410
+option_as_alt = "Both"
