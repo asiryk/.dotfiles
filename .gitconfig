@@ -4,7 +4,7 @@
 [init]
   defaultBranch = main
 [pull]
-  rebase = false
+  rebase = true
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -30,3 +30,5 @@
 
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
+[http] # For GitLab
+	postBuffer = 157286400
