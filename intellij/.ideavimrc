@@ -65,6 +65,7 @@ let mapleader = " "
 
 nmap <leader>lr <action>(RenameElement)
 nmap <leader>lf <action>(ReformatCode)<action>(OptimizeImports)
+nmap <leader>la <action>(ShowIntentionActions)
 nmap <leader>ff <action>(FindInPath)
 nmap <leader>fo <action>(GotoFile)
 nmap <leader>fc <action>(GotoClass)
