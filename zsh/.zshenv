@@ -10,4 +10,11 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
 export PATH="$PATH:$HOME/Personal/bin"
+export PATH="$PATH:$HOME/tomcat/apache-tomcat-10.1.13/bin"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$PATH:/Users/asiryk/Library/Python/3.9/bin"
+export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 . "$HOME/.cargo/env"
+
+export JAVA_HOME="/Users/asiryk/Library/Java/JavaVirtualMachines/openjdk-21/Contents/Home"
+export "PATH=$JAVA_HOME/bin:$PATH"
