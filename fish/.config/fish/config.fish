@@ -13,13 +13,6 @@ set -x NVIMDIR $HOME/.config/nvim
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 set -x GIT_DISCOVERY_ACROSS_FILESYSTEM 1
 
-# Path
-fish_add_path ~/bin
-fish_add_path /opt/homebrew/bin
-fish_add_path /Users/asiryk/Library/Python/3.9/bin
-fish_add_path "/Applications/IntelliJ IDEA.app/Contents/MacOS" # allow opening projects using "idea ." command
-fish_add_path $HOME/.cargo/bin
-
 set -g fish_color_cwd cyan
 set -g fish_color_command green
 set -g fish_color_param white
