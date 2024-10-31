@@ -12,6 +12,7 @@ set -x EDITOR "nvim"
 set -x NVIMDIR $HOME/.config/nvim
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 set -x GIT_DISCOVERY_ACROSS_FILESYSTEM 1
+set -x JAVA_HOME "/Users/asiryk/Library/Java/JavaVirtualMachines/openjdk-21/Contents/Home"
 
 set -g fish_color_cwd cyan
 set -g fish_color_command green
@@ -23,7 +24,7 @@ fnm env --use-on-cd | source
 
 # Aliases
 alias gs="git status"
-alias ll="ls -al"
+alias ll="ls -hal"
 alias vim="nvim --noplugin"
 alias vi="nvim --clean"
 alias v="vi"
@@ -50,14 +51,19 @@ function fish_prompt --description "minimum info snappy prompt"
   set -q fish_prompt_pwd_dir_length
   or set -lx fish_prompt_pwd_dir_length 0
 
+  set -l user (whoami)
+  set -l myhost (hostname)
+
   if functions -q fish_is_root_user; and fish_is_root_user
-    printf "%s%s%s %s%s%s\n%s❯_%s " \
+    printf "%s%s%s %s%s%s:%s%s%s\n%s❯_%s " \
       (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
+      (set_color brgreen) "$user@$myhost" (set_color normal) \
       (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) \
       (set_color bryellow) (set_color normal)
   else
-    printf "%s%s%s %s%s%s\n❯_ " \
+    printf "%s%s%s %s%s%s:%s%s%s\n❯_ " \
       (set_color brblack) (date "+%H:%M:%S") (set_color normal) \
+      (set_color brgreen) "$user@$myhost" (set_color normal) \
       (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
   end
 end
