@@ -50,6 +50,8 @@ function fish_user_key_bindings
   bind -M default \cf "fzfd"
   bind -M insert \ca "tmux attach"
   bind -M default \ca "tmux attach"
+  bind -M insert \co "lfcd"
+  bind -M default \co "lfcd"
 end
 
 function fish_prompt --description "minimum info snappy prompt"
@@ -58,7 +60,7 @@ function fish_prompt --description "minimum info snappy prompt"
   or set -lx fish_prompt_pwd_dir_length 0
 
   set -l user (whoami)
-  set -l myhost (hostname)
+  set -l myhost (string replace ".local" "" (hostname))
 
   if functions -q fish_is_root_user; and fish_is_root_user
     printf "%s%s%s %s%s%s:%s%s%s\n%s❯_%s " \
