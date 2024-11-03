@@ -43,7 +43,11 @@ function fish_user_key_bindings
   fish_vi_key_bindings --no-erase insert
 
   bind -M insert \cr "fzf_search_history"
+  bind -M default \cr "fzf_search_history"
   bind -M insert \cf "fzfd"
+  bind -M default \cf "fzfd"
+  bind -M insert \ca "tmux attach"
+  bind -M default \ca "tmux attach"
 end
 
 function fish_prompt --description "minimum info snappy prompt"
