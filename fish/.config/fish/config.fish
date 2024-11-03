@@ -34,7 +34,9 @@ alias gitbd="git branch | fzf | xargs git branch -d"
 
 function fzfd --description "fzf to common directories"
   set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
-  cd $dir
+  if test -n "$dir"
+    cd $dir
+  end
 end
 
 function fish_user_key_bindings
