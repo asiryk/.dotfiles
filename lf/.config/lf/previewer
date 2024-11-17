@@ -1,2 +1,2 @@
 #!/bin/sh
-bat --color=always --style=numbers --theme=gruvbox-dark "$1"
+bat --color=always --style=numbers --theme=TwoDark "$1"
