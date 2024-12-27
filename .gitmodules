@@ -1,3 +1,6 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/asiryk/nvim
+[submodule "yazi/.config/yazi/plugins/bat.yazi"]
+	path = yazi/.config/yazi/plugins/bat.yazi
+	url = https://github.com/mgumz/yazi-plugin-bat.git

@@ -1,0 +1,25 @@
+# TODO: work in progress
+
+# eerie black
+palette = 0=#141414
+# brick red
+palette = 1=#862731
+# maximum green
+palette = 2=#396624
+# goldenrod
+palette = 3=#e3ae2d
+# celadon blue
+palette = 4=#4281a4
+# pearly purple
+palette = 5=#aa6292
+# maximum blue green
+palette = 6=#62bec1
+# cultured
+palette = 7=#d0dadc
+
+background = d0dadc
+# eerie black
+foreground = 141414
+# cultured
+
+# vim: set ft=conf

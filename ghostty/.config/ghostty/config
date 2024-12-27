@@ -1,0 +1,25 @@
+# Font configuration:
+font-family = Hack Nerd Font Mono
+font-size = 14.5
+font-thicken = true
+font-feature = -calt
+
+# Cursor:
+cursor-invert-fg-bg = true
+cursor-style-blink = false
+cursor-click-to-move = true
+adjust-cursor-thickness = 150%
+
+# Background:
+background-opacity = 0.90
+background-blur-radius = 15
+
+# Macos
+macos-option-as-alt = true
+
+# Misc:
+theme = riot-dark
+shell-integration = fish
+# custom-shader = ./ghostty-shaders/retro-terminal.glsl
+
+# vim: set ft=conf

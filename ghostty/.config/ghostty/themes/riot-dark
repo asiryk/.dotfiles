@@ -1,0 +1,23 @@
+palette = 0=#141414
+# eerie black
+palette = 1=#ca4754
+# brick red
+palette = 2=#4d8b31
+# maximum green
+palette = 3=#e3ae2d
+# goldenrod
+palette = 4=#4281a4
+# celadon blue
+palette = 5=#aa6292
+# pearly purple
+palette = 6=#62bec1
+# maximum blue green
+palette = 7=#d0dadc
+# cultured
+
+background = 141414
+# eerie black
+foreground = d0dadc
+# cultured
+
+# vim: set ft=conf
