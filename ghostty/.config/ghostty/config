@@ -1,7 +1,6 @@
 # Font configuration:
-font-family = Hack Nerd Font Mono
+font-family = Hack
 font-size = 14.5
-font-thicken = true
 font-feature = -calt
 
 # Cursor:
@@ -16,10 +15,12 @@ background-blur-radius = 15
 
 # Macos
 macos-option-as-alt = true
+keybind = global:ctrl+enter=toggle_quick_terminal
 
 # Misc:
 theme = riot-dark
 shell-integration = fish
 # custom-shader = ./ghostty-shaders/retro-terminal.glsl
+# custom-shader = ./ghostty-shaders/bettercrt.glsl
 
 # vim: set ft=conf
