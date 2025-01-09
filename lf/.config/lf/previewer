@@ -1,2 +1,20 @@
-#!/bin/sh
-bat --color=always --style=numbers --theme=TwoDark "$1"
+#!/usr/bin/env fish
+
+
+set -l file $argv[1]
+set -l w $argv[2]
+set -l h $argv[3]
+set -l x $argv[4]
+set -l y $argv[5]
+
+set -l mime_type (file --mime-type $file | awk '{print $2}')
+set -l mime_encoding (file --mime-encoding $file | awk '{print $2}')
+
+if contains $mime_type image/png image/jpeg image/jpg image/avif
+  echo "[image] preview disabled"
+# kitten icat --stdin=no --place=$w"x"$h"@"$x"x"$y --transfer-mode=memory $file
+else if test $mime_encoding = "binary"
+  echo "[binary] preview disabled"
+else
+  bat --color=always --style=numbers --theme=TwoDark $file
+end

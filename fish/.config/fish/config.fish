@@ -33,7 +33,7 @@ alias gitbs="git branch | fzf | xargs git switch"
 alias gitbd="git branch | fzf | xargs git branch -d"
 
 function fzfd --description "fzf to common directories"
-  set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
+  set -l dir (find ~/Documents/ ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
   if test -n "$dir"
     cd $dir
   end
@@ -79,7 +79,7 @@ end
 function fish_mode_prompt --description "set cursor style depending on vim mode"
   switch $fish_bind_mode
     case insert
-      echo -n -e "\e[5 q"  # Beam Shape
+      echo -n -e "\e[6 q"  # Beam Shape
     case default  # Normal mode falls under default
       echo -n -e "\e[2 q"  # Block Shape
     case visual
