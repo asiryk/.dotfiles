@@ -1,19 +1,23 @@
-set hidden true
 set ignorecase true
+set hidden true
 set icons true
 
 set previewer ~/.dotfiles/lf/.config/lf/previewer
 set cleaner ~/.dotfiles/lf/.config/lf/cleaner
 
-# Custom Functions
+# Override open to open text files in Neovim
+# and fall back to Finder open on Mac
+cmd open &{{
+  case $(file --mime-type -Lb $f) in
+    text/*) lf -remote "send $id \$$EDITOR \$fx";;
+    *) open "$f" ;;
+  esac
+}}
+
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
   mkdir $ans
-}}
-
-cmd cd ${{
-  lfcd
 }}
 
 cmd mkfile ${{
@@ -24,35 +28,25 @@ cmd mkfile ${{
 
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) xdg-open "$f" ;;
-    esac
-}}
-
 cmd remove ${{
-    set -f
-    printf "$fx\n"
-    printf "remove? [y/n] "
-    read ans
-    [ "$ans" = "y" ] && rm -rf $fx
+  set -f
+  printf "$fx\n"
+  printf "remove? [y/n] "
+  read ans
+  [ "$ans" = "y" ] && rm -rf $fx
 }}
 
-cmd trash ${{
-    gio trash -- $fx
+cmd open-finder ${{
+  open "$(dirname "$(realpath $f)")"
 }}
 
-
-
-# Archive bindings
 cmd unarchive ${{
   case "$f" in
-      *.zip) unzip "$f" ;;
-      *.tar.gz) tar -xzvf "$f" ;;
-      *.tar.bz2) tar -xjvf "$f" ;;
-      *.tar) tar -xvf "$f" ;;
-      *) echo "Unsupported format" ;;
+    *.zip) unzip "$f" ;;
+    *.tar.gz) tar -xzvf "$f" ;;
+    *.tar.bz2) tar -xjvf "$f" ;;
+    *.tar) tar -xvf "$f" ;;
+    *) echo "Unsupported format" ;;
   esac
 }}
 
@@ -61,22 +55,9 @@ cmd unarchive ${{
 # v - invert select
 # u - unselect
 # p - paste
-
-map au unarchive
-
-# map d
-# map m
+# z + <key> - view options
+# s + <key> - sort options
 
 map . set hidden!
-map p paste
-map x cut
-map y copy
-map <enter> open
-map R reload
-map a mkfile
-map A mkdir
-
 map r push :rename<space>
-map o open
-
-# map dd trash
+map go :open-finder
