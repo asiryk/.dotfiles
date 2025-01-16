@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-
 set -l file $argv[1]
 set -l w $argv[2]
 set -l h $argv[3]
@@ -11,8 +10,10 @@ set -l mime_type (file --mime-type $file | awk '{print $2}')
 set -l mime_encoding (file --mime-encoding $file | awk '{print $2}')
 
 if contains $mime_type image/png image/jpeg image/jpg image/avif
-  echo "[image] preview disabled"
-# kitten icat --stdin=no --place=$w"x"$h"@"$x"x"$y --transfer-mode=memory $file
+  kitten icat --stdin=no --transfer-mode=memory \
+    --place=$w"x"$h"@"$x"x"$y $file </dev/null >/dev/tty
+
+  exit 1
 else if test $mime_encoding = "binary"
   echo "[binary] preview disabled"
 else

@@ -3,6 +3,7 @@ set ignorecase true
 set icons true
 
 set previewer ~/.dotfiles/lf/.config/lf/previewer
+set cleaner ~/.dotfiles/lf/.config/lf/cleaner
 
 # Custom Functions
 cmd mkdir ${{
