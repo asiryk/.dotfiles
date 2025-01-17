@@ -1,9 +1,16 @@
-set ignorecase true
-set hidden true
-set icons true
+# vim:ft=conf
 
-set previewer ~/.dotfiles/lf/.config/lf/previewer
-set cleaner ~/.dotfiles/lf/.config/lf/cleaner
+set shell               zsh
+set hidden              true
+set icons               true
+set number              true
+set numberfmt           "\033[2;90m"
+set relativenumber      true
+set incsearch           true
+set watch               true
+set scrolloff           10
+set previewer           ~/.dotfiles/lf/.config/lf/previewer
+set cleaner             ~/.dotfiles/lf/.config/lf/cleaner
 
 # Override open to open text files in Neovim
 # and fall back to Finder open on Mac
