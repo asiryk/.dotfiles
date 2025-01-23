@@ -1,10 +1,9 @@
 # vim:ft=conf
 
-set shell               zsh
 set hidden              true
 set icons               true
 set number              true
-set numberfmt           "\033[2;90m"
+set numberfmt           "\033[2;90m" # Make numbers grey instead of yellow
 set relativenumber      true
 set incsearch           true
 set watch               true
@@ -15,8 +14,8 @@ set cleaner             ~/.dotfiles/lf/.config/lf/cleaner
 # Override open to open text files in Neovim
 # and fall back to Finder open on Mac
 cmd open &{{
-  case $(file --mime-type -Lb $f) in
-    text/*) lf -remote "send $id \$$EDITOR \$fx";;
+  case $(file --mime-type -Lb "$f") in
+    text/*|application/json) lf -remote "send $id \$$EDITOR \$fx";;
     *) open "$f" ;;
   esac
 }}
