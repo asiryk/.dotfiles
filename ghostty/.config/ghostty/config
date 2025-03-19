@@ -18,7 +18,7 @@ macos-option-as-alt = true
 keybind = global:ctrl+enter=toggle_quick_terminal
 
 # Misc:
-theme = riot-dark
+theme = dark:riot-dark,light:riot-light
 shell-integration = fish
 # custom-shader = ./ghostty-shaders/retro-terminal.glsl
 # custom-shader = ./ghostty-shaders/bettercrt.glsl

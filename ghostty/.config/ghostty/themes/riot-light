@@ -1,25 +1,41 @@
-# TODO: work in progress
-
-# eerie black
 palette = 0=#141414
-# brick red
-palette = 1=#862731
-# maximum green
-palette = 2=#396624
-# goldenrod
-palette = 3=#e3ae2d
-# celadon blue
-palette = 4=#4281a4
-# pearly purple
-palette = 5=#aa6292
-# maximum blue green
-palette = 6=#62bec1
-# cultured
-palette = 7=#d0dadc
+# Black (Eerie Black - matches dark theme for accents)
+palette = 1=#ca4754
+# Bright Brick Red (errors, deletions)
+palette = 2=#3e7930
+# Rich Maximum Green (success, additions)
+palette = 3=#c48c18
+# Deep Goldenrod (warnings)
+palette = 4=#4780a4
+# Soft Celadon Blue (directories, softer accents)
+palette = 5=#7f2b52
+# Dark Pearly Purple (distinct accents)
+palette = 6=#2b888b
+# Deep Maximum Blue Green (balanced saturation)
+palette = 7=#4b5154
+# Slate Gray (comments, subtle foreground)
 
-background = d0dadc
-# eerie black
+# Bright Variants for bold highlights and strong contrast
+palette = 8=#5e6467
+# Bright Black (medium Slate Gray)
+palette = 9=#d93846
+# Bright Red (high contrast highlight/errors)
+palette = 10=#409a2f
+# Bright Green (bold success messages)
+palette = 11=#db9b20
+# Bright Yellow (strong highlight for warnings)
+palette = 12=#005faf
+# Rich Azure Blue (distinct clickable links/paths)
+palette = 13=#aa3a6c
+# Bright Magenta (strong accents)
+palette = 14=#259da0
+# Bright Cyan (highlight accents)
+palette = 15=#f0f4f6
+# Bright White (high contrast against black/accents)
+
+background = f6f6f6
+# Light Cultured (neutral background for readability)
 foreground = 141414
-# cultured
+# Eerie Black (clear, saturated text for maximum contrast)
 
 # vim: set ft=conf

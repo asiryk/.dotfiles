@@ -17,5 +17,10 @@ if contains $mime_type image/png image/jpeg image/jpg image/avif
 else if test $mime_encoding = "binary"
   echo "[binary] preview disabled"
 else
-  bat --color=always --style=numbers --theme=TwoDark $file
+  set -l theme OneHalfLight
+  if test (defaults read -g AppleInterfaceStyle 2>/dev/null) = "Dark"
+    set theme TwoDark
+  end
+
+  command bat --color=always --style=numbers --theme=$theme $file
 end
