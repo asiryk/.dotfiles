@@ -38,4 +38,7 @@ background = f6f6f6
 foreground = 141414
 # Eerie Black (clear, saturated text for maximum contrast)
 
+selection-background = bfceff
+selection-foreground = 141414
+
 # vim: set ft=conf
