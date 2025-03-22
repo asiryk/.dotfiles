@@ -33,9 +33,13 @@ alias gitbs="git branch | fzf | xargs git switch"
 alias gitbd="git branch | fzf | xargs git branch -d"
 
 function bat --description "override bat command to match system color scheme"
-  set -l theme OneHalfLight
-  if test (defaults read -g AppleInterfaceStyle 2>/dev/null) = "Dark"
+  if test (uname) != Darwin
     set theme TwoDark
+  else
+    set theme OneHalfLight
+    if test (defaults read -g AppleInterfaceStyle 2>/dev/null) = "Dark"
+      set theme TwoDark
+    end
   end
   command bat --theme=$theme $argv
 end
