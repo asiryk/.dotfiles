@@ -20,9 +20,10 @@ else
   if test (uname) != Darwin
     set theme TwoDark
   else
-    set theme OneHalfLight
-    if test (defaults read -g AppleInterfaceStyle 2>/dev/null) = "Dark"
+    if string match -q "Dark" (defaults read -g AppleInterfaceStyle 2>/dev/null)
       set theme TwoDark
+    else
+      set theme OneHalfLight
     end
   end
 

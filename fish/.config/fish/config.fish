@@ -36,9 +36,10 @@ function bat --description "override bat command to match system color scheme"
   if test (uname) != Darwin
     set theme TwoDark
   else
-    set theme OneHalfLight
-    if test (defaults read -g AppleInterfaceStyle 2>/dev/null) = "Dark"
+    if string match -q "Dark" (defaults read -g AppleInterfaceStyle 2>/dev/null)
       set theme TwoDark
+    else
+      set theme OneHalfLight
     end
   end
   command bat --theme=$theme $argv
@@ -48,6 +49,7 @@ function fzfd --description "fzf to common directories"
   set -l dir (find ~/Documents/ ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
   if test -n "$dir"
     cd $dir
+    commandline -f repaint # fix incorrect prompt after cd
   end
 end
 
@@ -60,8 +62,8 @@ function fish_user_key_bindings
   bind -M default \cr "fzf_search_history"
   bind -M insert \cf "fzfd"
   bind -M default \cf "fzfd"
-  bind -M insert \ca "tmux attach"
-  bind -M default \ca "tmux attach"
+  bind -M insert \cb "tmux attach"
+  bind -M default \cb "tmux attach"
   bind -M insert \co "lfcd"
   bind -M default \co "lfcd"
 end
