@@ -3,6 +3,8 @@
   name = asiryk
 [init]
   defaultBranch = main
+[core]
+  excludesfile = ~/.dotfiles/.global-gitignore
 [pull]
   rebase = true
 [filter "lfs"]
@@ -18,6 +20,7 @@
   sb = !git branch | fzf | xargs git switch
   sp = !git status --porcelain | sed s/^...// | fzf --multi | xargs git stash push
   sl = !git stash list --color=always --pretty='%C(yellow)%gd %h %Cgreen%cr %C(reset)%gs'
+  update-branch = "!git add -u && git commit --no-verify --allow-empty -m 'tmp' && git switch master && git pull && git switch - && git rebase master && git reset --mixed HEAD~1"
 
 [include]
   path = ~/.dotfiles/git-delta.ini
