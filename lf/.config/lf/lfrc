@@ -56,6 +56,69 @@ cmd unarchive ${{
   esac
 }}
 
+# Search within the directory; Open file by pressing Enter in Editor; Move lf location
+# to the location of that file
+cmd fzf_search ${{
+  cmd="rg -g '!{.git}' --hidden --column --line-number --no-heading --color=always --smart-case"
+
+  # Run fzf and capture the selected line into $res
+  res="$(fzf --ansi --disabled --layout=reverse --header="Search in files" --delimiter=: \
+     --bind="start:reload([ -n {q} ] && $cmd -- {q} || true)" \
+     --bind="change:reload([ -n {q} ] && $cmd -- {q} || true)" \
+     --preview='~/.config/lf/cleaner; ~/.config/lf/previewer {1} "$FZF_PREVIEW_COLUMNS" "$FZF_PREVIEW_LINES" "$FZF_PREVIEW_LEFT" "$FZF_PREVIEW_TOP"')"
+
+  if [ -n "$res" ]; then
+    # 1. Clean the result: Strip ANSI color codes (from rg)
+    #    This is necessary because --color=always adds invisible characters
+    clean="$(echo "$res" | sed 's/\x1b\[[0-9;]*m//g')"
+
+    # 2. Extract the Filename and Line Number
+    file="$(echo "$clean" | cut -d: -f1)"
+    line="$(echo "$clean" | cut -d: -f2)"
+
+    # 3. Prepare filename for lf (escape quotes and backslashes)
+    file_escaped="$(printf '%s' "$file" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+
+    # 4. Send the command to lf to move to that file
+    lf -remote "send $id select \"$file_escaped\""
+
+    # 5. Open the editor at the specific line
+    ${EDITOR:-nvim} "$file" "+$line"
+  fi
+}}
+map gs :fzf_search
+
+# MacOS quick look
+map <space> &qlmanage -p "$f" 2>/dev/null 1>/dev/null
+
+# Find for a file/dir and move lf location to it by pressing Enter
+cmd fzf_jump ${{
+  ignore="( -name .git -o -name node_modules -o -name dist -o -name build -o -name __pycache__ )"
+  res="$(find . -maxdepth 5 $ignore -prune -o -print  | sed 's/^\.\///' | fzf --reverse --header="Jump to location")"
+
+  if [ -n "$res" ]; then
+    if [ -d "$res" ]; then
+      cmd="cd"
+    else
+      cmd="select"
+    fi
+    res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    lf -remote "send $id $cmd \"$res\""
+  fi
+}}
+map gf :fzf_jump
+map <c-f> :fzf_jump
+
+cmd z %{{
+  result="$(zoxide query --exclude "$PWD" "$@" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  lf -remote "send $id cd \"$result\""
+}}
+
+cmd zi ${{
+  result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  lf -remote "send $id cd \"$result\""
+}}
+
 # Keybindings
 # <space> - select
 # v - invert select
