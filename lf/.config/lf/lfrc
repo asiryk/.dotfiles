@@ -89,7 +89,7 @@ cmd fzf_search ${{
 map gs :fzf_search
 
 # MacOS quick look
-map <space> &qlmanage -p "$f" 2>/dev/null 1>/dev/null
+map g<space> &qlmanage -p "$f" 2>/dev/null 1>/dev/null
 
 # Find for a file/dir and move lf location to it by pressing Enter
 cmd fzf_jump ${{

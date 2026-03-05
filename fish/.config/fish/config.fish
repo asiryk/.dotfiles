@@ -29,8 +29,7 @@ alias vim="nvim --noplugin"
 alias vi="nvim --clean"
 alias v="vi"
 
-alias gitbs="git branch | fzf | xargs git switch"
-alias gitbd="git branch | fzf | xargs git branch -d"
+alias get_idf=". $HOME/personal/esp-idf/export.fish"
 
 function bat --description "override bat command to match system color scheme"
   if test (uname) != Darwin
@@ -46,7 +45,8 @@ function bat --description "override bat command to match system color scheme"
 end
 
 function fzfd --description "fzf to common directories"
-  set -l dir (find ~/Documents/ ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
+  set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 \( -name "node_modules" -o -name "build" -o -name "dist" \) -prune -o -type d -print | sed 's://:/:g' | fzf)
+  # set -l dir (find ~/Work ~/.dotfiles/ ~/.config/ ~/personal/ -mindepth 0 -maxdepth 3 -type d | sed 's://:/:g' | fzf)
   if test -n "$dir"
     cd $dir
     commandline -f repaint # fix incorrect prompt after cd

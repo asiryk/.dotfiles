@@ -22,5 +22,6 @@ theme = dark:riot-dark,light:riot-light
 shell-integration = fish
 # custom-shader = ./ghostty-shaders/retro-terminal.glsl
 # custom-shader = ./ghostty-shaders/bettercrt.glsl
+# custom-shader = ./ghostty-shaders/cursor_blaze.glsl
 
 # vim: set ft=conf
