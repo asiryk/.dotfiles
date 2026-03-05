@@ -14,13 +14,15 @@
   excludesfile = ~/.dotfiles/.global-gitignore
 [pull]
   rebase = true
+[tag]
+  sort = creatordate
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
 [alias]
-  lo = log --oneline -n 20
+  lo = log -n 20 --decorate=short --color=always --pretty=format:\"%C(auto)%h%d%C(reset) %s %C(dim)| %an, %ad%C(reset)\" --date=relative
   last = log -1 head
   db = !git branch | fzf --multi | xargs git branch -D
   st = !git status --porcelain | sed s/^...//
@@ -41,4 +43,4 @@
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
 [http] # For GitLab
-	postBuffer = 157286400
+	postBuffer = 524288000

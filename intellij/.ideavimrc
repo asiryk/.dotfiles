@@ -63,6 +63,7 @@ let mapleader = " "
 
 " intellij actions (:actionlist) gist=https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 
+nmap grn <action>(RenameElement)
 nmap <leader>lr <action>(RenameElement)
 nmap <leader>lf <action>(ReformatCode)<action>(OptimizeImports)
 nmap <leader>la <action>(ShowIntentionActions)
@@ -76,6 +77,7 @@ nmap <leader>gk <action>(VcsShowPrevChangeMarker)zz
 nmap <leader>gj <action>(VcsShowNextChangeMarker)zz
 nmap <leader>gr <action>(Vcs.RollbackChangedLines)
 nmap <leader>ga <action>(Vcs.QuickListPopupAction)
+nmap <leader>gd <action>(CheckinProject)
 nmap <leader>r <action>(EditorPopupMenu.Run)
 nmap zf <action>(CollapseRegion)
 nmap zo <action>(ExpandRegion)
