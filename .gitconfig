@@ -25,20 +25,31 @@
   lo = log -n 20 --decorate=short --color=always --pretty=format:\"%C(auto)%h%d%C(reset) %s %C(dim)| %an, %ad%C(reset)\" --date=relative
   last = log -1 head
   db = !git branch | fzf --multi | xargs git branch -D
+  dw = "!git worktree list | fzf --multi | awk \"{gsub(/[][]/,\\\"\\\",\\$3); print \\$1,\\$3}\" | while read p b; do git worktree remove \"$p\" && echo \"Deleted worktree $p\" && git branch -D \"$b\"; done"
   st = !git status --porcelain | sed s/^...//
   sb = !git branch | fzf | xargs git switch
   sp = !git status --porcelain | sed s/^...// | fzf --multi | xargs git stash push
   sl = !git stash list --color=always --pretty='%C(yellow)%gd %h %Cgreen%cr %C(reset)%gs'
   update-branch = "!git add -u && git commit --no-verify --allow-empty -m 'tmp' && git switch master && git pull && git switch - && git rebase master && git reset --mixed HEAD~1"
+  stats-changes = "!git log --format=format: --name-only --since='1 year ago' | sort | uniq -c | sort -nr | head -20" # Top changed files
+  stats-author = "!git shortlog -sn --no-merges" # Top contributors by commit amount
+  stats-bugs = "!git log -i -E --grep='fix|bug|broken' --name-only --format='' | sort | uniq -c | sort -nr | head -20" # Top files with bugs
+  stats-date = "!git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c" # Project dynamics
+
+[difftool "nvim_difftool"]
+  cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
 
 [include]
   path = ~/.dotfiles/git-delta.ini
 [core]
   autocrlf = input
+  quotePath = false
 [credential]
   helper = osxkeychain
 [rerere]
   enabled = true
+[diff]
+  tool = nvim_difftool
 
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
