@@ -24,8 +24,9 @@
 [alias]
   lo = log -n 20 --decorate=short --color=always --pretty=format:\"%C(auto)%h%d%C(reset) %s %C(dim)| %an, %ad%C(reset)\" --date=relative
   last = log -1 head
+  cw = "!f() { git worktree add -b \"$1\" .worktrees/\"$1\" && git -C .worktrees/\"$1\" push --set-upstream origin \"$1\"; }; f" # git cw "branch-name" — create worktree + push branch to origin
   db = !git branch | fzf --multi | xargs git branch -D
-  dw = "!git worktree list | fzf --multi | awk \"{gsub(/[][]/,\\\"\\\",\\$3); print \\$1,\\$3}\" | while read p b; do git worktree remove \"$p\" && echo \"Deleted worktree $p\" && git branch -D \"$b\"; done"
+  dw = "!git worktree list | fzf --multi | awk \"{gsub(/[][]/,\\\"\\\",\\$3); print \\$1,\\$3}\" | while read p b; do git worktree remove --force \"$p\" && echo \"Deleted worktree $p\" && git branch -D \"$b\"; done"
   st = !git status --porcelain | sed s/^...//
   sb = !git branch | fzf | xargs git switch
   sp = !git status --porcelain | sed s/^...// | fzf --multi | xargs git stash push
@@ -35,6 +36,10 @@
   stats-author = "!git shortlog -sn --no-merges" # Top contributors by commit amount
   stats-bugs = "!git log -i -E --grep='fix|bug|broken' --name-only --format='' | sort | uniq -c | sort -nr | head -20" # Top files with bugs
   stats-date = "!git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c" # Project dynamics
+
+  # common typos
+  swtich = switch
+  rebaes = rebase
 
 [difftool "nvim_difftool"]
   cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
