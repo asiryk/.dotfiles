@@ -6,10 +6,10 @@ set -l h $argv[3]
 set -l x $argv[4]
 set -l y $argv[5]
 
-set -l mime_type (file --mime-type $file | awk '{print $2}')
-set -l mime_encoding (file --mime-encoding $file | awk '{print $2}')
+set -l mime_type (file -bL --mime-type -- $file)
+set -l mime_encoding (file -bL --mime-encoding -- $file)
 
-if contains $mime_type image/png image/jpeg image/jpg image/avif
+if string match -q 'image/*' -- $mime_type
   kitten icat --stdin=no --transfer-mode=memory \
     --place=$w"x"$h"@"$x"x"$y $file </dev/null >/dev/tty
 

@@ -8,8 +8,9 @@ set relativenumber      true
 set incsearch           true
 set watch               true
 set scrolloff           10
-set previewer           ~/.dotfiles/lf/.config/lf/previewer
-set cleaner             ~/.dotfiles/lf/.config/lf/cleaner
+set ifs                 "\n"   # split $fx/$fs on newlines so names with spaces work
+set previewer           ~/.config/lf/previewer
+set cleaner             ~/.config/lf/cleaner
 
 # Override open to open text files in Neovim
 # and fall back to Finder open on Mac
@@ -20,27 +21,10 @@ cmd open &{{
   esac
 }}
 
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
-}}
-
-cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  $EDITOR $ans
-}}
-
-cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-
-cmd remove ${{
-  set -f
-  printf "$fx\n"
-  printf "remove? [y/n] "
-  read ans
-  [ "$ans" = "y" ] && rm -rf $fx
-}}
+# Prompt for the name in lf's own command line (no shell takeover).
+# % runs synchronously and prints any output to lf's message line.
+cmd mkdir %mkdir -p -- "$@"
+cmd mkfile ${{ ${EDITOR:-nvim} "$@" }}
 
 cmd open-finder ${{
   open "$(dirname "$(realpath $f)")"
@@ -128,5 +112,8 @@ cmd zi ${{
 # s + <key> - sort options
 
 map . set hidden!
-map r push :rename<space>
+map r rename
+map A push :mkdir<space>     # type dir name in lf's command line
+map a push :mkfile<space>    # type file name, then opens $EDITOR
+map D delete                 # built-in: modal y/N confirm, permanent rm
 map go :open-finder
