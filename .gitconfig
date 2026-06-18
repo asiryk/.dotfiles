@@ -40,6 +40,8 @@
   # common typos
   swtich = switch
   rebaes = rebase
+  brnach = branch
+  psuh = push
 
 [difftool "nvim_difftool"]
   cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"

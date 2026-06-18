@@ -29,3 +29,5 @@ zmodload zsh/complist
 _comp_options+=(globdots) # Include hidden files.
 
 eval "$(zoxide init zsh)"
+
+. "$HOME/.local/share/../bin/env"

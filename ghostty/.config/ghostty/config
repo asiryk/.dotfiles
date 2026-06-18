@@ -17,6 +17,8 @@ background-blur-radius = 15
 macos-option-as-alt = true
 keybind = global:ctrl+enter=toggle_quick_terminal
 
+notify-on-command-finish = unfocused
+
 # Leader mode
 keybind = ctrl+s>1=goto_tab:1
 keybind = ctrl+s>2=goto_tab:2
