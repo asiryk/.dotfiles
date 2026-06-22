@@ -14,6 +14,8 @@
   excludesfile = ~/.dotfiles/.global-gitignore
 [pull]
   rebase = true
+[push]
+  forceWithLease = true
 [tag]
   sort = creatordate
 [filter "lfs"]
