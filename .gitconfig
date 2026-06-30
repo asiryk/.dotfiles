@@ -48,8 +48,6 @@
 [difftool "nvim_difftool"]
   cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
 
-[include]
-  path = ~/.dotfiles/git-delta.ini
 [core]
   autocrlf = input
   quotePath = false
@@ -63,4 +61,4 @@
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
 [http] # For GitLab
-	postBuffer = 524288000
+  postBuffer = 524288000
