@@ -27,7 +27,7 @@
   lo = log -n 20 --decorate=short --color=always --pretty=format:\"%C(auto)%h%d%C(reset) %s %C(dim)| %an, %ad%C(reset)\" --date=relative
   last = log -1 head
   cw = "!f() { git worktree add -b \"$1\" .worktrees/\"$1\" && git -C .worktrees/\"$1\" push --set-upstream origin \"$1\"; }; f" # git cw "branch-name" — create worktree + push branch to origin
-  db = !git branch | fzf --multi | xargs git branch -D
+  db = !git branch | grep -v '^[*+]' | fzf --multi | xargs git branch -D # skips current + worktree branches — use git dw for those
   dw = "!git worktree list | fzf --multi | awk \"{gsub(/[][]/,\\\"\\\",\\$3); print \\$1,\\$3}\" | while read p b; do git worktree remove --force \"$p\" && echo \"Deleted worktree $p\" && git branch -D \"$b\"; done"
   st = !git status --porcelain | sed s/^...//
   sb = !git branch | fzf | xargs git switch
@@ -61,4 +61,4 @@
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
 [http] # For GitLab
-  postBuffer = 524288000
+	postBuffer = 524288000
