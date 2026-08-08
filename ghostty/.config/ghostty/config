@@ -1,7 +1,7 @@
 # Font configuration:
 font-family = Hack
-font-size = 14.5
-font-feature = -calt
+font-size = 14
+font-feature = -calt, -liga, -dlig # Disable ligatures
 
 # Cursor:
 cursor-invert-fg-bg = true
@@ -37,7 +37,6 @@ keybind = ctrl+s>p=toggle_command_palette
 # Misc:
 theme = dark:riot-dark,light:riot-light
 shell-integration = fish
-# custom-shader = ./ghostty-shaders/retro-terminal.glsl
 # custom-shader = ./ghostty-shaders/bettercrt.glsl
 # custom-shader = ./ghostty-shaders/cursor_blaze.glsl
 
