@@ -1,7 +1,7 @@
 # alias rmd="rm -rf" # the worst alias ever
 alias gs="git status -s"
 alias ls="ls --color" # Add colorized output to ls
-alias ll="ls -lAh"
+alias ll="ls -hAlo"
 alias clear="clear -x" # Allow scroll after clear
 alias tree="exa --tree"
 alias vim="nvim --noplugin"

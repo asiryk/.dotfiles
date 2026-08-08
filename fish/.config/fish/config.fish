@@ -24,7 +24,7 @@ fnm env --use-on-cd | source
 
 # Aliases
 alias gs="git status"
-alias ll="ls -hal"
+alias ll="ls -hAlo"
 alias vim="nvim --noplugin"
 alias vi="nvim --clean"
 alias v="vi"
