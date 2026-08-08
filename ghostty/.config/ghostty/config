@@ -13,13 +13,8 @@ adjust-cursor-thickness = 150%
 background-opacity = 0.90
 background-blur-radius = 15
 
-# Macos
-macos-option-as-alt = true
-keybind = global:ctrl+enter=toggle_quick_terminal
-
-notify-on-command-finish = unfocused
-
 # Leader mode
+keybind = global:ctrl+enter=toggle_quick_terminal
 keybind = ctrl+s>1=goto_tab:1
 keybind = ctrl+s>2=goto_tab:2
 keybind = ctrl+s>3=goto_tab:3
@@ -30,13 +25,12 @@ keybind = ctrl+s>7=goto_tab:7
 keybind = ctrl+s>8=goto_tab:8
 keybind = ctrl+s>9=goto_tab:9
 keybind = ctrl+s>==equalize_splits
-keybind = ctrl+s>v=new_split:right
-keybind = ctrl+s>s=new_split:down
-keybind = ctrl+s>p=toggle_command_palette
 
 # Misc:
 theme = dark:riot-dark,light:riot-light
+notify-on-command-finish = unfocused
 shell-integration = fish
+macos-option-as-alt = true
 # custom-shader = ./ghostty-shaders/bettercrt.glsl
 # custom-shader = ./ghostty-shaders/cursor_blaze.glsl
 
