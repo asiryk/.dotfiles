@@ -31,6 +31,8 @@ theme = dark:riot-dark,light:riot-light
 notify-on-command-finish = unfocused
 shell-integration = fish
 macos-option-as-alt = true
+undo-timeout=10s
+quick-terminal-position=bottom
 # custom-shader = ./ghostty-shaders/bettercrt.glsl
 # custom-shader = ./ghostty-shaders/cursor_blaze.glsl
 
