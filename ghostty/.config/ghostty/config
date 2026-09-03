@@ -24,7 +24,10 @@ keybind = ctrl+s>6=goto_tab:6
 keybind = ctrl+s>7=goto_tab:7
 keybind = ctrl+s>8=goto_tab:8
 keybind = ctrl+s>9=goto_tab:9
-keybind = ctrl+s>==equalize_splits
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>j=goto_split:down
+keybind = ctrl+s>k=goto_split:up
+keybind = ctrl+s>l=goto_split:right
 
 # Misc:
 theme = dark:riot-dark,light:riot-light
