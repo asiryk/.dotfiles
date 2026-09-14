@@ -1,0 +1,31 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Swap cmd+1..5 / ctrl+1..5 (cmd -> desktops, ctrl -> apps/Spotlight)",
+                        "manipulators": [
+                            { "type": "basic", "from": { "key_code": "1", "modifiers": { "mandatory": ["command"] } }, "to": [{ "key_code": "1", "modifiers": ["left_control"] }] },
+                            { "type": "basic", "from": { "key_code": "1", "modifiers": { "mandatory": ["control"] } }, "to": [{ "key_code": "1", "modifiers": ["left_command"] }] },
+                            { "type": "basic", "from": { "key_code": "2", "modifiers": { "mandatory": ["command"] } }, "to": [{ "key_code": "2", "modifiers": ["left_control"] }] },
+                            { "type": "basic", "from": { "key_code": "2", "modifiers": { "mandatory": ["control"] } }, "to": [{ "key_code": "2", "modifiers": ["left_command"] }] },
+                            { "type": "basic", "from": { "key_code": "3", "modifiers": { "mandatory": ["command"] } }, "to": [{ "key_code": "3", "modifiers": ["left_control"] }] },
+                            { "type": "basic", "from": { "key_code": "3", "modifiers": { "mandatory": ["control"] } }, "to": [{ "key_code": "3", "modifiers": ["left_command"] }] },
+                            { "type": "basic", "from": { "key_code": "4", "modifiers": { "mandatory": ["command"] } }, "to": [{ "key_code": "4", "modifiers": ["left_control"] }] },
+                            { "type": "basic", "from": { "key_code": "4", "modifiers": { "mandatory": ["control"] } }, "to": [{ "key_code": "4", "modifiers": ["left_command"] }] },
+                            { "type": "basic", "from": { "key_code": "5", "modifiers": { "mandatory": ["command"] } }, "to": [{ "key_code": "5", "modifiers": ["left_control"] }] },
+                            { "type": "basic", "from": { "key_code": "5", "modifiers": { "mandatory": ["control"] } }, "to": [{ "key_code": "5", "modifiers": ["left_command"] }] }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "iso"
+            }
+        }
+    ]
+}
