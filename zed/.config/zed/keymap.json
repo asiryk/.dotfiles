@@ -1,0 +1,68 @@
+[
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space g j": "editor::GoToHunk"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space g k": "editor::GoToPreviousHunk"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space g r": "git::Restore"
+    }
+  },
+  {
+    "context": "vim_mode == normal || (!(vim_mode == insert) && Workspace)",
+    "bindings": {
+      "space f o": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space g d": "git::Diff"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space l a": "editor::ToggleCodeActions"
+    }
+  },
+  {
+    "context": "vim_mode == normal || (!(vim_mode == insert) && Workspace)",
+    "bindings": {
+      "space f f": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "vim_mode == normal || (!(vim_mode == insert) && Workspace)",
+    "bindings": {
+      "space h o": "tab_switcher::ToggleAll"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-t": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  }
+]

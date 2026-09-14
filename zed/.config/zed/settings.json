@@ -1,0 +1,144 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "gutter": {
+    "bookmarks": false,
+    "breakpoints": false
+  },
+  "cli_default_open_behavior": "existing_window",
+  "markdown_preview_font_family": "IBM Plex Sans",
+  "markdown_preview_code_font_family": "Hack",
+  "markdown_preview_font_size": 15.0,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "diff_view_style": "split",
+  "debugger": {
+    "save_breakpoints": false,
+    "button": false
+  },
+  "semantic_tokens": "combined",
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": false
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "right"
+  },
+  "jsx_tag_auto_close": {
+    "enabled": true
+  },
+  "use_auto_surround": false,
+  "use_autoclose": false,
+  "toolbar": {
+    "code_actions": false,
+    "agent_review": true,
+    "quick_actions": true,
+    "breadcrumbs": true
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "outline_panel": {
+    "git_status": true,
+    "default_width": 300.0,
+    "indent_guides": {
+      "show": "always"
+    },
+    "auto_fold_dirs": true,
+    "auto_reveal_entries": true,
+    "button": true,
+    "dock": "right",
+    "indent_size": 20.0,
+    "folder_icons": true,
+    "file_icons": true
+  },
+  "use_system_window_tabs": true,
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "show_close_button": "always",
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+    "show_project_items": true
+  },
+  "search": {
+    "button": true
+  },
+  "diagnostics": {
+    "button": true
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true
+  },
+  "project_panel": {
+    "dock": "right",
+    "default_width": 240.0,
+    "hide_root": false,
+    "scrollbar": {
+      "show": "never"
+    },
+    "indent_size": 15.0,
+    "entry_spacing": "standard",
+    "button": true
+  },
+  "ui_font_weight": 400.0,
+  "buffer_line_height": "standard",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "show_edit_predictions": false,
+  "theme": {
+    "mode": "system",
+    "light": "Grey",
+    "dark": "Vague"
+  },
+  "theme_overrides": {
+    "Vague": {
+      "editor.active_line.background": "#141415"
+    }
+  },
+  "vim_mode": true,
+  "autosave": "on_focus_change",
+  "format_on_save": "off",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "cursor_blink": false,
+  "relative_line_numbers": "enabled",
+  "scrollbar": { "show": "auto" },
+  "vertical_scroll_margin": 5,
+  "buffer_font_family": "Hack Nerd Font Mono",
+  "ui_font_family": "Lucida Grande",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "wrap_guides": [80, 120],
+  "terminal": {
+    "button": true,
+    "font_size": 12
+  }
+}

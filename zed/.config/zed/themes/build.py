@@ -48,7 +48,12 @@ LIGHT = {
     # the text rather than behind it, so an opaque value there hides every
     # selected glyph. Alpha is load-bearing: do not flatten this to a solid.
     "bg_selection_overlay": "#1561B82E",
-    "bg_search": "#F9EAB3",  # grey.lua light_yellow
+    # Same paint-order bug as bg_selection_overlay above: Zed's markdown
+    # preview draws search.match_background ON TOP of the matched glyphs, so
+    # an opaque fill blanks out the match text entirely. Zed's own built-in
+    # themes keep this key translucent for the same reason (e.g. One Dark
+    # uses #74ade866, ~40% alpha) -- do not flatten this to a solid.
+    "bg_search": "#F9EAB3B3",  # grey.lua light_yellow at 70% alpha
     "bg_highlight": "#E6E6E6",  # LSP document highlight
     "bg_bracket": "#E3EAF3",  # grey.lua highlight
     "bg_code": "#ECECEC",  # grey.lua grey_bg_light; preview's own chip is #E8E8E8

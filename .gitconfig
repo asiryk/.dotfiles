@@ -45,9 +45,6 @@
   brnach = branch
   psuh = push
 
-[difftool "nvim_difftool"]
-  cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
-
 [core]
   autocrlf = input
   quotePath = false
@@ -55,8 +52,6 @@
   helper = osxkeychain
 [rerere]
   enabled = true
-[diff]
-  tool = nvim_difftool
 
 [includeIf "gitdir:~/Work/"]
   path = ~/.gitconfig-work
