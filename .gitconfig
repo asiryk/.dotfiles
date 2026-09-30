@@ -16,6 +16,7 @@
   rebase = true
 [push]
   forceWithLease = true
+  autoSetupRemote = true
 [tag]
   sort = creatordate
 [filter "lfs"]
@@ -32,7 +33,8 @@
   st = !git status --porcelain | sed s/^...//
   sb = !git branch | fzf | xargs git switch
   sp = !git status --porcelain | sed s/^...// | fzf --multi | xargs git stash push
-  sl = !git stash list --color=always --pretty='%C(yellow)%gd %h %Cgreen%cr %C(reset)%gs'
+  sl = !git stash list --color=always --pretty='%C(yellow)%gd%C(reset) %gs %C(brightblack)%cr%C(reset)'
+  ds = "!git sl | fzf --multi --ansi --reverse --preview 'git stash show -p --color=always {1}' | cut -d' ' -f1 | sort -t'{' -k2 -nr | xargs -n1 git stash drop" # drop selected stashes (highest index first so refs stay valid)
   update-branch = "!git add -u && git commit --no-verify --allow-empty -m 'tmp' && git switch master && git pull && git switch - && git rebase master && git reset --mixed HEAD~1"
   stats-changes = "!git log --format=format: --name-only --since='1 year ago' | sort | uniq -c | sort -nr | head -20" # Top changed files
   stats-author = "!git shortlog -sn --no-merges" # Top contributors by commit amount
