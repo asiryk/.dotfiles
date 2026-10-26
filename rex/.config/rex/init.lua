@@ -1,0 +1,4 @@
+-- Rex config: https://www.superlogical.com/rex/docs/customize/config
+-- init.lua only holds key bindings, actions and hosts.
+-- Font and theme live in macOS defaults, see ./defaults.sh.
+-- Apply changes with: rex config reload

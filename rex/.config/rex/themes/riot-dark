@@ -1,0 +1,33 @@
+palette = 0=#141414
+# eerie black
+palette = 1=#ca4754
+# brick red
+palette = 2=#4d8b31
+# maximum green
+palette = 3=#e3ae2d
+# goldenrod
+palette = 4=#4281a4
+# celadon blue
+palette = 5=#aa6292
+# pearly purple
+palette = 6=#62bec1
+# maximum blue green
+palette = 7=#d0dadc
+# cultured
+
+# Bright variants: Ghostty's built-in defaults, which it uses when a theme omits them
+palette = 8=#666666
+palette = 9=#d54e53
+palette = 10=#b9ca4a
+palette = 11=#e7c547
+palette = 12=#7aa6da
+palette = 13=#c397d8
+palette = 14=#70c0b1
+palette = 15=#eaeaea
+
+background = 141414
+# eerie black
+foreground = d0dadc
+# cultured
+
+# vim: set ft=conf
