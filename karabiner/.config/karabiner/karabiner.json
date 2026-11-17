@@ -196,6 +196,12 @@
                     ]
                 }
             ],
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f8" },
+                    "to": [{ "key_code": "vk_none" }]
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": {
