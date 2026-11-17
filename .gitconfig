@@ -1,5 +1,5 @@
 [user]
-  email = asiryk.net@gmail.com
+  email = 61456651+asiryk@users.noreply.github.com
   name = asiryk
   signingkey = ~/.ssh/id_ed25519.pub  # Optional but recommended for clarity
 [gpg]
@@ -51,7 +51,10 @@
   autocrlf = input
   quotePath = false
 [credential]
-  helper = osxkeychain
+  # Reset the list (Homebrew's /opt/homebrew/etc/gitconfig also adds osxkeychain), then use
+  # Apple's signed helper: its Keychain ACL survives updates, unlike Homebrew's ad-hoc signed one
+  helper =
+  helper = /Library/Developer/CommandLineTools/usr/libexec/git-core/git-credential-osxkeychain
 [rerere]
   enabled = true
 
