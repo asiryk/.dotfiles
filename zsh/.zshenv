@@ -18,3 +18,8 @@ export PATH="$PATH:/Applications/IntelliJ IDEA.app/Contents/MacOS"
 
 export JAVA_HOME="/Users/asiryk/Library/Java/JavaVirtualMachines/openjdk-21/Contents/Home"
 export "PATH=$JAVA_HOME/bin:$PATH"
+
+# Inject GitLab npm token from Keychain per call (mirrors fish/conf.d/keychain.fish).
+# In .zshenv so non-interactive shells (agents, scripts) get it too.
+npm() { GITLAB_NPM_TOKEN="$(security find-generic-password -a "$USER" -s gitlab-npm-token -w)" command npm "$@"; }
+npx() { GITLAB_NPM_TOKEN="$(security find-generic-password -a "$USER" -s gitlab-npm-token -w)" command npx "$@"; }
